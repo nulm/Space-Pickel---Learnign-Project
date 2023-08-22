@@ -39,7 +39,7 @@ while True:
     clock.tick(60)     
 
     # Places the surface "test_surface" ontop of the display surface at position 0,0.
-    screen.blit(test_surface, (0,200))
+    screen.blit(test_surface, (200,100))
     
     # Draws all elements
     # Updated everything

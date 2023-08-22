@@ -9,16 +9,28 @@ pygame.init()
 # Creates a display surface
 screen = pygame.display.set_mode((800,400))
 # Changed the program window title. Displayed ontop of the display surface. 
-pygame.display.set_caption("Pygame : Game 1")
+pygame.display.set_caption("Game1 : V0.0.1")
 
 # Sets the variable clock to time.Clock. Which is used to control the game clock for 
 # how fast to runt he game
 clock = pygame.time.Clock()
 
+# Applies the specified font to the variable test_font. 
+test_font  = pygame.font.Font("font/Pixeltype.ttf", 50)
+
 # This is a test regular surface. It has a width of 100 and a height of 200.
-test_surface = pygame.Surface((100,200))
-test_surface.fill("Red")
-                              
+# test_surface = pygame.Surface((100,200))
+# test_surface.fill("Red")
+
+# This loads the img sky to the variable sky_img.
+sky_img = pygame.image.load("graphics/Sky.png")
+
+# This loads the ground img and assigns it to the variable ground_img.
+ground_img = pygame.image.load("graphics/ground.png")
+
+# Creates a text text variable that uses the render method on the test_font variable.
+# Dont not use anti alias and uses the black color.
+text_surface = test_font.render("Test Text", False, "black")                         
 
 # This is the games main while loop. It runs untill the exit() method stops the game inside
 # the event for loop.
@@ -38,8 +50,14 @@ while True:
     # This variable and method don't control the minimum tick rate only the max or "ceiling".
     clock.tick(60)     
 
-    # Places the surface "test_surface" ontop of the display surface at position 0,0.
-    screen.blit(test_surface, (200,100))
+    # Places the image sky_ig ontop of the display surface at position 0,0 as a regular surface.
+    screen.blit(sky_img, (0,0))
+
+    # Places the image ground_img ontop of the display surface as a regular surface at postion 
+    screen.blit(ground_img,(0,300))
+
+    # Places the text stored in the variable text_surface on the display surface. 
+    screen.blit(text_surface, (300,50))
     
     # Draws all elements
     # Updated everything

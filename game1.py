@@ -200,11 +200,6 @@ while True:
           pygame.quit()
           exit()
         if game_active == True:
-          if event.type == pygame.MOUSEBUTTONDOWN:
-            if player_rect.collidepoint(event.pos):
-              print("mosue hits player")
-              if player_rect.bottom == 300:
-                player_gravity = -30
           # Event loop logic to check if a key is pressed. 
           if event.type == pygame.KEYDOWN:
             print("keydown")
